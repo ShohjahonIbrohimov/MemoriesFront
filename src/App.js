@@ -1,24 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { Container, Grid, Grow, Typography, AppBar } from "@material-ui/core";
+import memories from "./components/images/memories.png";
+import Form from "./components/Form/Form";
+import Posts from "./components/Posts/Posts";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container maxWidth="lg">
+      <AppBar position="static">
+        <Grid container justify="" alignItems="center" spacing={2}>
+          <img src={memories} width="60" alt="memories" />
+          <Typography variant="h4">Memories</Typography>
+        </Grid>
+      </AppBar>
+      <Grow in>
+        <Container>
+          <Grid
+            container
+            justify="space-between"
+            alignItems="stretch"
+            spacing={2}
+          >
+            <Grid item>
+              <Posts />
+            </Grid>
+            <Grid item>
+              <Form />
+            </Grid>
+          </Grid>
+        </Container>
+      </Grow>
+    </Container>
   );
 }
 
